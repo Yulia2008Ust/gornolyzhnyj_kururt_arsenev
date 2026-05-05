@@ -1,0 +1,400 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Галерея горнолыжного курорта Арсеньев — фотографии трасс, отелей, подъёмников и инфраструктуры курорта в Приморском крае.">
+    <title>Галерея — Горнолыжный курорт «Арсеньев»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f0f4f8;
+        }
+
+        .top-bar {
+            background: #0f1629;
+            padding: 8px 0;
+            font-size: 9pt;
+            color: #a0b4cc;
+            border-bottom: 1px solid #1e2d47;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: #b8cee8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .top-bar a:hover {
+            color: #7ec8e3;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 15px 0 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 50px;
+        }
+
+        .logo-text h1 {
+            font-size: 16pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #0f1629;
+        }
+
+        .logo-text h1 span {
+            color: #5b9bd5;
+        }
+
+        .logo-text p {
+            font-size: 8pt;
+            color: #8899aa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        .header-contact {
+            text-align: right;
+            font-size: 10pt;
+        }
+
+        .header-contact .phone {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #5b9bd5;
+        }
+
+        nav {
+            background: #5b9bd5;
+        }
+
+        .main-nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-nav a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 10pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            background: #3d7eb5;
+        }
+
+        .page-banner {
+            background: linear-gradient(135deg, #0f1629 0%, #1a2d4a 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .page-banner h2 {
+            font-size: 24pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-banner p {
+            color: #a0b4cc;
+            margin-top: 10px;
+            font-size: 11pt;
+        }
+
+        .breadcrumbs {
+            background: #ffffff;
+            padding: 12px 0;
+            font-size: 9pt;
+            color: #8899aa;
+            border-bottom: 1px solid #e8ecf0;
+        }
+
+        .breadcrumbs a {
+            color: #5b9bd5;
+            text-decoration: none;
+        }.breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background: #ffffff;
+            padding: 50px 0;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-item {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            background: #f7fafc;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-item .caption {
+            padding: 12px 15px;
+            font-size: 10pt;
+            color: #4a5568;
+            text-align: center;
+        }
+
+        footer {
+            background: #0f1629;
+            padding: 40px 0 20px 0;
+            font-size: 10pt;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 12pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer p, footer a {
+            color: #a0b4cc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        footer a:hover {
+            color: #7ec8e3;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e2d47;
+            padding-top: 20px;
+            text-align: center;
+            color: #5a6e85;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+
+
+
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/logo.png" alt="Горнолыжный курорт Арсеньев"></a>
+                    <div class="logo-text">
+                        <h1>Курорт <span>Арсеньев</span></h1>
+                        <p>Горнолыжный комплекс</p>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <p>Бронирование и справки</p>
+                    <p class="phone">+7 (42361) 4-20-25</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-nav">
+                    <li><a href="index.html">Главная</a></li>
+                    <li><a href="about.html">О курорте</a></li>
+                    <li><a href="trails.html">Трассы</a></li>
+                    <li><a href="hotels.html">Отели</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="gallery.html" class="active">Галерея</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="school.html">Школа</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h2>Галерея</h2>
+            <p>Фотографии трасс, отелей и инфраструктуры курорта</p>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container"><a href="index.html">Главная</a> &raquo; Галерея
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <a href="images/gallery_1_large.jpg" target="_blank">
+                        <img src="images/gallery_1_small.jpg" alt="Панорамный вид на трассы курорта с высоты птичьего полёта">
+                    </a>
+                    <p class="caption">Вид на трассы с вершины</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_2_large.jpg" target="_blank">
+                        <img src="images/gallery_2_small.jpg" alt="Скоростной подъёмник на фоне заснеженных гор Сихотэ-Алиня">
+                    </a>
+                    <p class="caption">Скоростной подъёмник</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_3_large.jpg" target="_blank">
+                        <img src="images/gallery_3_small.jpg" alt="Номер люкс в отеле с панорамными окнами и видом на горы">
+                    </a>
+                    <p class="caption">Люкс с видом на горы</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_4_large.jpg" target="_blank">
+                        <img src="images/gallery_4_small.jpg" alt="Крытый бассейн с подогревом на территории курорта">
+                    </a>
+                    <p class="caption">Крытый бассейн</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_5_large.jpg" target="_blank">
+                        <img src="images/gallery_5_small.jpg" alt="Лыжники на учебном склоне с инструктором">
+                    </a>
+                    <p class="caption">Занятие с инструктором</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_6_large.jpg" target="_blank">
+                        <img src="images/gallery_6_small.jpg" alt="Вечернее катание на освещённой трассе курорта">
+                    </a>
+                    <p class="caption">Вечернее катание</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_7_large.jpg" target="_blank">
+                        <img src="images/gallery_7_small.jpg" alt="Ресторан на территории курорта с панорамными окнами">
+                    </a>
+                    <p class="caption">Ресторан курорта</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_8_large.jpg" target="_blank">
+                        <img src="images/gallery_8_small.jpg" alt="Открытый бассейн с подогревом и видом на горы">
+                    </a>
+                    <p class="caption">Открытый бассейн</p>
+                </div>
+                <div class="gallery-item">
+                    <a href="images/gallery_9_large.jpg" target="_blank">
+                        <img src="images/gallery_9_small.jpg" alt="Спа-зона с сауной и зоной отдыха">
+                    </a>
+                    <p class="caption">Спа-комплекс</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Курорт «Арсеньев»</h4>
+                    <p>Приморский край, г. Арсеньев,<br>горная цепь Сихотэ-Алинь</p>
+                    <p>Тел.: +7 (42361) 4-20-25</p>
+                    <p>Email: info@arsgora2025.ru</p>
+                </div>
+                <div>
+                    <h4>Услуги</h4>
+                    <p><a href="trails.html">Трассы и подъёмники</a></p>
+                    <p><a href="hotels.html">Проживание</a></p>
+                    <p><a href="rental.html">Прокат снаряжения</a></p><p><a href="school.html">Школа инструкторов</a></p>
+                </div>
+                <div>
+                    <h4>Информация</h4>
+                    <p><a href="about.html">О курорте</a></p>
+                    <p><a href="news.html">Новости</a></p>
+                    <p><a href="reviews.html">Отзывы</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                </div>
+                <div>
+                    <h4>Режим работы</h4>
+                    <p>Пн–Вс: 09:00 – 21:00</p>
+                    <p>Подъёмники: 09:00 – 20:30</p>
+                    <p>Прокат: 08:30 – 20:45</p>
+                    <p>Ресторан: 10:00 – 23:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Горнолыжный курорт «Арсеньев». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
