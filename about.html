@@ -1,0 +1,432 @@
+html
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="О горнолыжном курорте Арсеньев — 12 км трасс, скоростные подъёмники, отели, спа. Всё о курорте в Приморском крае.">
+    <title>О курорте — Горнолыжный курорт «Арсеньев»</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', 'Helvetica Neue', sans-serif;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+            background: #f0f4f8;
+        }
+
+        .top-bar {
+            background: #0f1629;
+            padding: 8px 0;
+            font-size: 9pt;
+            color: #a0b4cc;
+            border-bottom: 1px solid #1e2d47;
+        }
+
+        .top-bar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-bar a {
+            color: #b8cee8;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .top-bar a:hover {
+            color: #7ec8e3;
+        }
+
+        .container {
+            width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 15px 0 0 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+        }
+
+        .header-main {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 15px;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-area img {
+            height: 50px;
+        }
+
+        .logo-text h1 {
+            font-size: 16pt;
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: #0f1629;
+        }
+
+        .logo-text h1 span {
+            color: #5b9bd5;
+        }
+
+        .logo-text p {
+            font-size: 8pt;
+            color: #8899aa;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 2px;
+        }
+
+        .header-contact {
+            text-align: right;
+            font-size: 10pt;
+        }
+
+        .header-contact .phone {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #5b9bd5;
+        }
+
+        nav {
+            background: #5b9bd5;
+        }
+
+        .main-nav {
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .main-nav a {
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            padding: 14px 22px;
+            font-size: 10pt;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            transition: background 0.2s;
+            white-space: nowrap;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            background: #3d7eb5;
+        }
+
+        .page-banner {
+            background: linear-gradient(135deg, #0f1629 0%, #1a2d4a 100%);
+            padding: 60px 0;
+            text-align: center;
+            color: #ffffff;
+        }
+
+        .page-banner h2 {
+            font-size: 24pt;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .page-banner p {
+            color: #a0b4cc;
+            margin-top: 10px;
+            font-size: 11pt;
+        }
+
+        .breadcrumbs {
+            background: #ffffff;
+            padding: 12px 0;
+            font-size: 9pt;
+            color: #8899aa;
+            border-bottom: 1px solid #e8ecf0;
+        }
+
+        .breadcrumbs a {
+            color: #5b9bd5;
+            text-decoration: none;
+        } .breadcrumbs a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            background: #ffffff;
+            padding: 50px 0;
+        }
+
+        .about-grid {
+            display: flex;
+            gap: 50px;
+            align-items: flex-start;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h3 {
+            font-size: 16pt;
+            color: #0f1629;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            margin-bottom: 15px;
+            color: #4a5568;
+        }
+
+        .about-text ul {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .about-text ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: #4a5568;
+        }
+
+        .about-text ul li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #5b9bd5;
+            font-weight: bold;
+            font-size: 14pt;
+            line-height: 1;
+        }
+
+        .about-sidebar {
+            width: 350px;
+            background: #f0f4f8;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .about-sidebar h4 {
+            font-size: 13pt;
+            color: #0f1629;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #dce4ec;
+        }
+
+        .info-item:last-child {
+            border-bottom: none;
+        }
+
+        .info-item .label {
+            font-size: 8pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #8899aa;
+            margin-bottom: 3px;
+        }
+
+        .info-item .value {
+            font-size: 11pt;
+            font-weight: 600;
+            color: #0f1629;
+        }
+
+        footer {
+            background: #0f1629;
+            padding: 40px 0 20px 0;
+            font-size: 10pt;
+        }
+
+        .footer-grid {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 30px;
+        }
+
+        footer h4 {
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-size: 12pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        footer p, footer a {
+            color: #a0b4cc;
+            text-decoration: none;
+            line-height: 1.8;
+        }
+
+        footer a:hover {
+            color: #7ec8e3;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #1e2d47;
+            padding-top: 20px;
+            text-align: center;
+            color: #5a6e85;
+            font-size: 9pt;
+        }
+    </style>
+</head>
+<body>
+
+
+    <header>
+        <div class="container">
+            <div class="header-main">
+                <div class="logo-area">
+                    <a href="index.html"><img src="images/logo.png" alt="Горнолыжный курорт Арсеньев"></a>
+                    <div class="logo-text">
+                        <h1>Курорт <span>Арсеньев</span></h1>
+                        <p>Горнолыжный комплекс</p>
+                    </div>
+                </div>
+                <div class="header-contact">
+                    <p>Бронирование и справки</p>
+                    <p class="phone">+7 (42361) 4-20-25</p>
+                </div>
+            </div>
+        </div>
+        <nav>
+            <div class="container">
+                <ul class="main-nav">
+                    <li><a href="index.html">Главная</a></li><li><a href="about.html" class="active">О курорте</a></li>
+                    <li><a href="trails.html">Трассы</a></li>
+                    <li><a href="hotels.html">Отели</a></li>
+                    <li><a href="prices.html">Цены</a></li>
+                    <li><a href="gallery.html">Галерея</a></li>
+                    <li><a href="news.html">Новости</a></li>
+                    <li><a href="school.html">Школа</a></li>
+                    <li><a href="reviews.html">Отзывы</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <section class="page-banner">
+        <div class="container">
+            <h2>О курорте</h2>
+            <p>Узнайте больше о горнолыжном комплексе «Арсеньев»</p>
+        </div>
+    </section>
+
+    <div class="breadcrumbs">
+        <div class="container">
+            <a href="index.html">Главная</a> &raquo; О курорте
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h3>Горнолыжный курорт мирового уровня в сердце Сихотэ-Алиня</h3>
+                    <p>Курорт «Арсеньев» — это современный горнолыжный комплекс, расположенный в уникальной природной зоне Приморского края. Мы предлагаем гостям идеальные условия для активного зимнего отдыха, сочетая передовые технологии и живописные ландшафты горной цепи Сихотэ-Алинь.</p>
+                    <p>Общая протяжённость трасс составляет 12 километров. Все склоны оборудованы системой искусственного оснежения, что гарантирует отличное качество покрытия в течение всего сезона — с декабря по март. Две скоростные канатные дороги обеспечивают пропускную способность до 2700 человек в день.</p>
+                    <p>На территории курорта работают отели категории 3–4 звезды на 240 номеров, открытый и крытый бассейны, спа-комплекс, рестораны и пункты проката снаряжения. Мы делаем всё, чтобы ваш отдых был комфортным и запоминающимся.</p>
+                    <ul>
+                        <li>12 км подготовленных трасс всех уровней сложности</li>
+                        <li>Система искусственного оснежения на всех склонах</li>
+                        <li>Две скоростные канатные дороги</li>
+                        <li>Отели 3–4 звезды на 240 номеров</li>
+                        <li>Бассейны, спа, рестораны и прокат</li>
+                    </ul>
+                </div>
+                <div class="about-sidebar">
+                    <h4>Ключевые факты</h4>
+                    <div class="info-item">
+                        <p class="label">Общая протяжённость трасс</p>
+                        <p class="value">12 км</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Количество подъёмников</p>
+                        <p class="value">2 скоростные канатные дороги</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Гостиничный фонд</p>
+                        <p class="value">240 номеров</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Пропускная способность</p>
+                        <p class="value">до 2700 чел./день</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Сезон</p>
+                        <p class="value">декабрь – март</p>
+                    </div>
+                    <div class="info-item">
+                        <p class="label">Высота курорта</p>
+                        <p class="value">350 м над уровнем моря</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>Курорт «Арсеньев»</h4><p>Приморский край, г. Арсеньев,<br>горная цепь Сихотэ-Алинь</p>
+                    <p>Тел.: +7 (42361) 4-20-25</p>
+                    <p>Email: info@arsgora2025.ru</p>
+                </div>
+                <div>
+                    <h4>Услуги</h4>
+                    <p><a href="trails.html">Трассы и подъёмники</a></p>
+                    <p><a href="hotels.html">Проживание</a></p>
+                    <p><a href="rental.html">Прокат снаряжения</a></p>
+                    <p><a href="school.html">Школа инструкторов</a></p>
+                </div>
+                <div>
+                    <h4>Информация</h4>
+                    <p><a href="about.html">О курорте</a></p>
+                    <p><a href="news.html">Новости</a></p>
+                    <p><a href="reviews.html">Отзывы</a></p>
+                    <p><a href="contacts.html">Контакты</a></p>
+                </div>
+                <div>
+                    <h4>Режим работы</h4>
+                    <p>Пн–Вс: 09:00 – 21:00</p>
+                    <p>Подъёмники: 09:00 – 20:30</p>
+                    <p>Прокат: 08:30 – 20:45</p>
+                    <p>Ресторан: 10:00 – 23:00</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Горнолыжный курорт «Арсеньев». Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
